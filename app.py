@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify
-from dateWiseAttaindance import dwaScrapper
-from subjectWiseAttaindance import swScrapper
-from overallAttaindance import oaScrapper
+from dateWiseAttendance import dwaScrapper
+from subjectWiseAttendance import swScrapper
+from overallAttendance import oaScrapper
 
 app = Flask(__name__)
 
