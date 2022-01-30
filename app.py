@@ -11,18 +11,27 @@ def landing():
 
 @app.route("/datewise-attaindance-<int:username>-<string:password>")
 def datewise(username, password):
-    scrapper = dwaScrapper()
-    return jsonify(scrapper.scrap(username=username, password=password))
+    if(username == 'username' and password == 'password'):
+        return 'Update username and password..'
+    else:
+        scrapper = dwaScrapper()
+        return jsonify(scrapper.scrap(username=username, password=password))
 
 @app.route("/subjectwise-attaindance-<int:username>-<string:password>")
 def subjectwise(username, password):
-    scrapper = swScrapper()
-    return jsonify(scrapper.scrap(username=username, password=password))
+    if(username == 'username' and password == 'password'):
+        return 'Update username and password..'
+    else:
+        scrapper = swScrapper()
+        return jsonify(scrapper.scrap(username=username, password=password))
 
 @app.route("/overall-attaindance-<int:username>-<string:password>")
 def overall(username, password):
-    scrapper = oaScrapper()
-    return jsonify(scrapper.scrap(username=username, password=password))
+    if(username == 'username' and password == 'password'):
+        return 'Update username and password..'
+    else:
+        scrapper = oaScrapper()
+        return jsonify(scrapper.scrap(username=username, password=password))
 
 if __name__ == '__main__':
     app.run(debug=False)
