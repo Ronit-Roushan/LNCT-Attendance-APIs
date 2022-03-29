@@ -8,28 +8,29 @@ class swScrapper:
 
         LOGIN_ROUTE = 'Accsoft2/StudentLogin.aspx'
 
-        HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36', 'origin': URL, 'referer': URL + LOGIN_ROUTE}
+        HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36', 'origin': URL, 'referer': URL + LOGIN_ROUTE}
 
         s = requests.session()
 # csrf_token = s.get(URL).cookies['csrftoken']
 
         login_payload = {
             'ctl00$ScriptManager1': 'ctl00$cph1$UpdatePanel5|ctl00$cph1$btnStuLogin',
-            '__EVENTTARGET':  '',
-            '__EVENTARGUMENT': '' ,
-            '__LASTFOCUS': '' ,
-            '__VIEWSTATE': '/wEPDwUJNzE5NjI1MTU4D2QWAmYPZBYCAgMPZBYEAgcPZBYIAg0PFgIeB1Zpc2libGVnFgJmD2QWAgIBDxYCHgNzcmMFG2ltYWdlcy9MTkNUX0Job3BhbF9Mb2dvLnBuZ2QCEQ9kFgJmD2QWAgIBDxBkZBYBZmQCEw9kFgJmD2QWAgIBDxYCHwBnFgICBA9kFgJmD2QWAgIBD2QWAmYPZBYCAgEPZBYEZg9kFgJmD2QWAgIBD2QWAmYPZBYCAgEPEGRkFgBkAgEPZBYCZg9kFgICAw8WAh4FVmFsdWUFAjUxZAIVD2QWAmYPZBYCAgEPFgIfAGgWAgIED2QWAmYPZBYCAgEPZBYCZg9kFgICAQ9kFgRmD2QWAmYPZBYCAgEPZBYCZg9kFgICAQ8QDxYGHg1EYXRhVGV4dEZpZWxkBQdGaW5ZZWFyHg5EYXRhVmFsdWVGaWVsZAUJRmluWWVhcklEHgtfIURhdGFCb3VuZGdkEBURCi0tU2VsZWN0LS0KMjAyMS0yMDIyIAoyMDIwLTIwMjEgCjIwMTktMjAyMCAKMjAxOC0yMDE5IAoyMDE3LTIwMTggCjIwMTYtMjAxNyAKMjAxNS0yMDE2IAoyMDE0LTIwMTUgCjIwMTMtMjAxNCAKMjAxMi0yMDEzIAoyMDExLTIwMTIgCjIwMTAtMjAxMSAKMjAwOS0yMDEwIAoyMDA4LTIwMDkgCjIwMDctMjAwOCAKMjAwNi0yMDA3IBURATACMTYCMTUCMTQCMTMCMTICMTECMTABOQE4ATcBNgE1ATQBMwEyATEUKwMRZ2dnZ2dnZ2dnZ2dnZ2dnZ2cWAQIBZAIBD2QWAmYPZBYCAgEPZBYCZg9kFgICAQ8QZGQWAGQCCQ8PFgIeBFRleHQFCzEyLURlYy0yMDIxZGRk+ChwWbyQjJpaoB+PpkOJ5rybuPVH3lZKmZNyoWaJwb8=',
+            '__EVENTTARGET': '',
+            '__EVENTARGUMENT': '',
+            '__LASTFOCUS': '',
+            '__VIEWSTATE': '/wEPDwULLTE2MDI1OTUyNjEPZBYCZg9kFgICAw9kFgQCBw9kFggCDQ8WAh4HVmlzaWJsZWcWAmYPZBYCAgEPFgIeA3NyYwUbaW1hZ2VzL0xOQ1RfQmhvcGFsX0xvZ28ucG5nZAIRD2QWAmYPZBYCAgEPEGRkFgFmZAITD2QWAmYPZBYCAgEPFgIfAGcWAgIFD2QWAmYPZBYCAgEPZBYCZg9kFgICAQ9kFgRmD2QWAmYPZBYCAgEPZBYCZg9kFgICAQ8QZGQWAGQCAQ9kFgJmD2QWAgIDDxYCHgVWYWx1ZQUCNTFkAhUPZBYCZg9kFgICAQ8WAh8AaBYCAgQPZBYCZg9kFgICAQ9kFgJmD2QWAgIBD2QWBGYPZBYCZg9kFgICAQ9kFgJmD2QWAgIBDxAPFgYeDURhdGFUZXh0RmllbGQFB0ZpblllYXIeDkRhdGFWYWx1ZUZpZWxkBQlGaW5ZZWFySUQeC18hRGF0YUJvdW5kZ2QQFREKLS1TZWxlY3QtLQoyMDIxLTIwMjIgCjIwMjAtMjAyMSAKMjAxOS0yMDIwIAoyMDE4LTIwMTkgCjIwMTctMjAxOCAKMjAxNi0yMDE3IAoyMDE1LTIwMTYgCjIwMTQtMjAxNSAKMjAxMy0yMDE0IAoyMDEyLTIwMTMgCjIwMTEtMjAxMiAKMjAxMC0yMDExIAoyMDA5LTIwMTAgCjIwMDgtMjAwOSAKMjAwNy0yMDA4IAoyMDA2LTIwMDcgFREBMAIxNgIxNQIxNAIxMwIxMgIxMQIxMAE5ATgBNwE2ATUBNAEzATIBMRQrAxFnZ2dnZ2dnZ2dnZ2dnZ2dnZxYBAgFkAgEPZBYCZg9kFgICAQ9kFgJmD2QWAgIBDxBkZBYAZAIJDw8WAh4EVGV4dAULMTEtRmViLTIwMjJkZGRBeiGUVNjc/s2MEelIsPytRdianHTq/zeUXRH7lqF+pg==',
             '__VIEWSTATEGENERATOR': 'AE43C86C',
-            '__EVENTVALIDATION': '/wEdAAlRz8tiZ/E3Qm86V+rCXAmYseDjO4OjzzusyZ26WwJoA+zQjwyf5g+4ezBNg2ywlcSjjWGi3txshLAmmT4JdN7fK07E9QiEVcg0FYyK8QuVpoODxP24oSCS7D+CpT9vdzVWRY5uqcphA2smPJPFzLHn+mo9SV2v/SHtiocBMWq7cO7ou5vayuKtr5/nHS8pGkUPVOOn7ugu8qvZS7LhOlOJL8s5d4+0B1LsgcAGjGR9VA==',
+            '__EVENTVALIDATION': '/wEdAAnrJ+guAwVW1WiBV0iTxOI4seDjO4OjzzusyZ26WwJoA+zQjwyf5g+4ezBNg2ywlcSjjWGi3txshLAmmT4JdN7fK07E9QiEVcg0FYyK8QuVpoODxP24oSCS7D+CpT9vdzVWRY5uqcphA2smPJPFzLHn+mo9SV2v/SHtiocBMWq7cO7ou5vayuKtr5/nHS8pGkVycJjdzclT9OsEkiSJ2Y/m6FgZC9Wf9Nct3/C2yTKmUw==',
             'ctl00$cph1$rdbtnlType': 2,
-            'ctl00$cph1$hdnSID': '' ,
-            'ctl00$cph1$hdnSNO': '' ,
-            'ctl00$cph1$hdnRDURL': '' ,
+            'ctl00$cph1$hdnSID': '',
+            'ctl00$cph1$hdnSNO': '',
+            'ctl00$cph1$hdnRDURL': '',
             'ctl00$cph1$txtStuUser': username,
             'ctl00$cph1$txtStuPsw': password,
             '__ASYNCPOST': True,
             'ctl00$cph1$btnStuLogin': 'Login >>'
         }
+
 
         login_request = s.post(URL + LOGIN_ROUTE, headers= HEADERS, data= login_payload)
         # print(login_request.status_code)
